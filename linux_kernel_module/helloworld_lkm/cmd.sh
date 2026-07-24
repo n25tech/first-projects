@@ -33,7 +33,11 @@ run_vm() {
 	  -drive file=debian-vm.qcow2,format=qcow2 \
 	  -netdev user,id=net0,hostfwd=tcp::2222-:22 \
 	  -device virtio-net-pci,netdev=net0 \
-	  -display gtk
+	  -nographic
+}
+
+sync_files() {
+	fswatch -o . | xargs -I{} rsync -avz --exclude='.git' --exclude='*.iso' --exclude="*.qcow2" ./ debian-vm:~/
 }
 
 print_help() {
@@ -46,6 +50,9 @@ case $1 in
 		;;
 	run*)
 		run_vm
+		;;
+	sync*)
+		sync_files
 		;;
 	*)
 		print_help
