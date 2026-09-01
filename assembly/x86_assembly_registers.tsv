@@ -1,0 +1,17 @@
+Role / Index	64-bit	32-bit	16-bit	8-bit
+Accumulator	rax	eax	ax	al (low), ah (high)
+Base	rbx	ebx	bx	bl (low), bh (high)
+Counter	rcx	ecx	cx	cl (low), ch (high)
+Data	rdx	edx	dx	dl (low), dh (high)
+Source Index	rsi	esi	si	sil
+Destination Index	rdi	edi	di	dil
+Stack Pointer	rsp	esp	sp	spl
+Base Pointer	rbp	ebp	bp	bpl
+Extended 8	r8	r8d	r8w	r8b
+Extended 9	r9	r9d	r9w	r9b
+Extended 10	r10	r10d	r10w	r10b
+Extended 11	r11	r11d	r11w	r11b
+Extended 12	r12	r12d	r12w	r12b
+Extended 13	r13	r13d	r13w	r13b
+Extended 14	r14	r14d	r14w	r14b
+Extended 15	r15	r15d	r15w	r15b
