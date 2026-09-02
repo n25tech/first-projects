@@ -1,6 +1,7 @@
 # Variables
 ASM=nasm
-LD=ld
+#LINKER=ld
+LINKER=gcc
 FLAGS=-f elf64
 
 # Automatically find all .asm files and define their binary names
@@ -13,7 +14,7 @@ all: $(BINS)
 # Pattern rule: Link .o into a binary
 %: %.o
 	mkdir -p bin
-	$(LD) $< -o bin/$@
+	$(LINKER) $< -o bin/$@
 
 # Pattern rule: Assemble .asm into .o
 %.o: %.asm

@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include <unistd.h>
 
 int main() {
-	printf("hello world");
+	write(1, "hello\n", 6);
 	return 0;
 }
