@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rocm-dev
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: gpu-server
+  containers:
+    - name: rocm
+      image: rocm/dev-ubuntu-24.04:7.2.1
+      command: ["sleep", "infinity"]
+      securityContext:
+        privileged: true
+      volumeMounts:
+        - name: code
+          mountPath: /workspace
+        - name: kfd
+          mountPath: /dev/kfd
+        - name: dri
+          mountPath: /dev/dri
+  volumes:
+    - name: code
+      hostPath:
+        path: /home/joker/Code/first-projects/rocm
+        type: Directory
+    - name: kfd
+      hostPath:
+        path: /dev/kfd
+        type: CharDevice
+    - name: dri
+      hostPath:
+        path: /dev/dri
+        type: Directory
