@@ -1,12 +1,13 @@
 HIPCC := hipcc
-SRC ?= vector_add.hip
+#SRC ?= vector_add.hip
+SRC ?= normalized_vector.hip
 TARGET := $(basename $(SRC))
 
 #CXXFLAGS := -O2
 
 .PHONY: all run clean
 
-all: $(TARGET)
+all: $(TARGET) run
 
 $(TARGET): $(SRC)
 	mkdir -p target
