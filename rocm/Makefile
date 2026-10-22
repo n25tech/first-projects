@@ -1,6 +1,6 @@
 HIPCC := hipcc
 #SRC ?= vector_add.hip
-SRC ?= normalized_vector.hip
+SRC ?= normalize_vector.hip
 TARGET := $(basename $(SRC))
 
 #CXXFLAGS := -O2
